@@ -1,0 +1,15 @@
+---
+# zerodowntime.docker_repo/tasks/repo_ubuntu.yml
+
+- name: Add apt key for decker repo
+  apt_key:
+    id: 0EBFCD88
+    url: https://download.docker.com/linux/ubuntu/gpg
+
+
+- name: Add docker ubuntu repository
+  apt_repository:
+    repo: "deb [arch=amd64] {{ docker_repo__baseurl }} stable"
+    state: present
+    filename: docker-ce
+    update_cache: true

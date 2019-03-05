@@ -1,0 +1,14 @@
+---
+# zerodowntime.docker_repo/tasks/repo_centos.yml
+
+- name: docker_repo | Add to yum repos.d
+  become: true
+  template:
+    src: docker-ce.repo.j2
+    dest: "/etc/yum.repos.d/docker-ce.repo"
+    owner: root
+    group: root
+    mode: 0644
+    seuser: system_u
+    serole: object_r
+    setype: system_conf_t
