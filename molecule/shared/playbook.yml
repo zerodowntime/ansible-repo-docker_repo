@@ -1,0 +1,8 @@
+---
+
+- name: This_play
+  hosts: all
+  become: true
+
+  roles:
+    - zerodowntime.docker_repo

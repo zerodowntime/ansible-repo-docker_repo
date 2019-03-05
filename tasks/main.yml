@@ -1,0 +1,13 @@
+---
+# roles/zerodowntime.docker_repo/tasks/main.yml
+
+- name: docker_repo | load os vars
+  vars:
+    vars_files:
+      - "vars/{{ ansible_distribution|lower }}.{{ ansible_distribution_major_version|int }}.yml"
+      - "vars/{{ ansible_distribution|lower }}.yml"
+  include_vars: "{{ lookup('first_found', vars_files) }}"
+
+
+- name: include tasks depends on os distribution
+  include_tasks: "repo_{{ ansible_distribution|lower }}.yml"

@@ -1,0 +1,8 @@
+---
+# zerodowntime.docker_repo/vars/centos.ym
+
+#? docker_repo__def_repo_url:
+#?   type: string
+#?   description: def URL path to repo for centos
+#?   required: True
+docker_repo__def_repo_url: https://download.docker.com/linux/centos/7/$basearch/stable

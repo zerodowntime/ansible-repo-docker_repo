@@ -1,0 +1,14 @@
+---
+# zerodowntime.docker_repo/defaults/main.yml
+
+#? docker_repo__baseurl:
+#?   type: string
+#?   description: URL path to repo
+#?   required: True
+docker_repo__baseurl: "{{ docker_repo__def_repo_url }}"
+
+#? docker_repo__enabled:
+#?   type: bool
+#?   description: is repo enable
+#?   required: True
+docker_repo__enabled: true

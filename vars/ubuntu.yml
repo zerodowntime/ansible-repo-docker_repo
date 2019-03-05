@@ -1,0 +1,8 @@
+---
+# zerodowntime.docker_repo/vars/ubuntu.yml
+
+#? docker_repo__def_repo_url:
+#?   type: string
+#?   description: def URL path to repo for ubuntu
+#?   required: True
+docker_repo__def_repo_url: "https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }}"
