@@ -9,7 +9,7 @@
 
 - name: Add docker ubuntu repository
   apt_repository:
-    repo: "deb [arch=amd64] {{ docker_repo__baseurl }} stable"
+    repo: "deb [arch={{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}] {{ docker_repo__baseurl }} stable"
     state: present
     filename: docker-ce
     update_cache: true
